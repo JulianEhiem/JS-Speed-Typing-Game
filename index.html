@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <script
+      src="https://kit.fontawesome.com/58c1369767.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Document</title>
+  </head>
+
+  <body class="bg-dark text-white">
+    <header class="bg-secondary text-center p-3 mb-5">
+      <h1>WordBeater</h1>
+    </header>
+    <div class="container text-center" style="z-index: 1;">
+      <!-- Word & Input -->
+      <div class="row">
+        <div class="col-md-6 mx-auto">
+          <p class="lead">
+            Type The Given Word Within
+            <span class="text-success" id="seconds">5</span> Seconds:
+          </p>
+          <h2 class="display-2 mb-5" id="current-word">hello</h2>
+          <input
+            type="text"
+            class="form-control form-control-lg"
+            placeholder="Start typing..."
+            id="word-input"
+            autofocus
+          />
+          <h4 class="mt-3" id="message"></h4>
+
+          <!-- Time & Score Columns -->
+          <div class="row mt-5">
+            <div class="col-md-6">
+              <h3>
+                Time Left:
+                <span id="time">0</span>
+              </h3>
+            </div>
+            <div class="col-md-6">
+              <h3>
+                Score:
+                <span id="score">0</span>
+              </h3>
+            </div>
+          </div>
+
+          <!-- Instructions -->
+          <div class="row mt-5">
+            <div class="col-md-12">
+              <div class="card card-body bg-secondary text-white">
+                <h5>Instructions</h5>
+                <p>
+                  Type each word in the given amount of seconds to score. To
+                  play again, just type the current word. Your score will reset
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!--     
+          <div class="row mt-5">
+            <div class="col-md-8 mx-auto">
+              <div class="card card-body bg-light text-dark">
+                
+                <button
+                  type="button"
+                  class="btn btn-success btn-sm"
+                  id="changeLevel"
+                  data-toggle="modal"
+                  data-target="#levelSelector"
+                >
+                  <i class="fas fa-edit"></i>
+                </button>
+                <h4>Current Level:</h4>
+              
+                <h3
+                  class="mt-2 col-md-6 mx-auto bg-dark text-success"
+                  id="levelDisplay"
+                ></h3>
+                <div
+                  id="levelSelector"
+                  class="modal fade"
+                  tabindex="-1"
+                  role="dialog"
+                  aria-labelledby="levelSelectorTitle"
+                  aria-hidden="true"
+                >
+                  <div
+                    class="modal-dialog modal-dialog-centered"
+                    role="document"
+                  >
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h4 class="modal-title">Select Level</h4>
+                        <button
+                          class="close"
+                          type="button"
+                          data-dismiss:="modal"
+                          aria-label="Close"
+                        >
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body" role="radiogroup">
+                        <input
+                          type="radio"
+                          id="easyLevel"
+                          name="easy"
+                          value="easy"
+                        />
+                        <label for="easyLevel">Easy</label>
+                        <input
+                          type="radio"
+                          id="mediumLevel"
+                          name="medium"
+                          value="medium"
+                        />
+                        <label for="mediumLevel">Medium</label>
+                        <input
+                          type="radio"
+                          id="hardLevel"
+                          name="hard"
+                          value="hard"
+                        />
+                        <label for="hardLevel">Hard</label>
+                      </div>
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          class="btn btn-secondary"
+                          data-dismiss:="modal"
+                        >
+                          Close
+                        </button>
+                        <button type="button" class="btn btn-primary">
+                          Save Changes
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> 
+          
+          
+        -->
+          <!-- Button trigger modal -->
+          <button
+            type="button"
+            class="btn btn-primary"
+            data-toggle="modal"
+            data-target="#exampleModalCenter"
+          >
+            Launch demo modal
+          </button>
+
+          <!-- Modal -->
+          <div
+            class="modal fade"
+            id="exampleModalCenter"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="exampleModalCenterTitle"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">
+                    Modal title
+                  </h5>
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  ...
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                  <button type="button" class="btn btn-primary">
+                    Save changes
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--    <script src="main.js"></script> -->
+  </body>
+</html>
