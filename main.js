@@ -24,6 +24,8 @@ const scoreDisplay = document.querySelector("#score");
 const timeDisplay = document.querySelector("#time");
 const message = document.querySelector("#message");
 const seconds = document.querySelector("#seconds");
+const changeLevel = document.querySelector("#changeLevel");
+const levelDiv = document.querySelector("#levelDiv");
 
 const words = [
   "this",
@@ -158,5 +160,17 @@ function checkStatus() {
   if (!isPlaying && time === 0) {
     message.innerHTML = "Game Over!!!";
     score = -1;
+  }
+}
+
+// Change game Level
+
+changeLevel.addEventListener("click", levelChange);
+
+function levelChange() {
+  if (levelDiv.style.display === "none") {
+    levelDiv.style.display = "block";
+  } else {
+    levelDiv.style.display = "none";
   }
 }
