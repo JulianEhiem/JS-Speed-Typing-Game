@@ -26,6 +26,9 @@ const message = document.querySelector("#message");
 const seconds = document.querySelector("#seconds");
 const changeLevel = document.querySelector("#changeLevel");
 const levelDiv = document.querySelector("#levelDiv");
+const easyLevelRadio = document.querySelector("#easyLevelRadio");
+const mediumLevelRadio = document.querySelector("#mediumLevelRadio");
+const hardLevelRadio = document.querySelector("#hardLevelRadio");
 
 const words = [
   "this",
@@ -129,14 +132,35 @@ function matchWords() {
   }
 }
 
-//Pick & show random word
+// Filtering Words list to reflect difficulty chosen
+
+const shortWordTest = (minLength) => (x) => x.length <= minLength;
+const mediumWordTest = (minLength) => (x) => 5 < x.length <= minLength;
+const longWordTest = (minLength) => (x) => x.length > minLength;
+
+const isShort = shortWordTest(5);
+const isMedium = mediumWordTest(10);
+const isLong = longWordTest(10);
+
+const shortWords = words.filter(isShort);
+const mediumWords = words.filter(isMedium);
+const longWords = words.filter(isLong);
+
+//Pick & show random word from designated list
 
 function showWord() {
-  //generate random array index
-  const randIndex = Math.floor(Math.random() * words.length);
-
-  //output random word
-  currentWord.innerHTML = words[randIndex];
+  if ((easyLevelRadio.selected = true)) {
+    //generate random array index
+    const randIndex = Math.floor(Math.random() * shortWords.length);
+    //output random word
+    currentWord.innerHTML = shortWords[randIndex];
+  } else if ((mediumLevelRadio.selected = true)) {
+    const randIndex = Math.floor(Math.random() * mediumWords.length);
+    currentWord.innerHTML = mediumWords[randIndex];
+  } else if ((hardLevelRadio.selected = true)) {
+    const randIndex = Math.floor(Math.random() * longWords.length);
+    currentWord.innerHTML = longWords[randIndex];
+  }
 }
 
 //Countdown timer
@@ -174,3 +198,7 @@ function levelChange() {
     levelDiv.style.display = "none";
   }
 }
+
+let easyLevel = () => {};
+let hardLevel = () => {};
+let mediumLevel = () => {};
